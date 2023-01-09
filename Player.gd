@@ -34,6 +34,7 @@ func _ready():
 
 func add_seed():
 	emit_signal("seed_collected")
+	$SeedCollected.play()
 
 func _physics_process(delta):
 	if dead:
@@ -76,6 +77,7 @@ func _physics_process(delta):
 			
 	if cumulated_dmg != 0:
 		emit_signal("player_hit", cumulated_dmg)
+		$DamagePlayer.play()
 		
 	knockback += cumulated_knockback_direction * knockback_speed
 	

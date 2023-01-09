@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://art/start_screen_background.png" type="Texture" id=1]
 [ext_resource path="res://assets/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://art/KeyD.png" type="Texture" id=6]
 [ext_resource path="res://art/KeyW.png" type="Texture" id=7]
 [ext_resource path="res://art/KeyS.png" type="Texture" id=8]
+[ext_resource path="res://assets/Fantasy_Game_Background_Looping.mp3" type="AudioStream" id=9]
+[ext_resource path="res://assets/Short - Mini Popup.wav" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 outline_color = Color( 0.054902, 0.0313726, 0.188235, 1 )
@@ -216,6 +218,10 @@ text = "START"
 flat = true
 script = ExtResource( 3 )
 
+[node name="StartPressed" type="AudioStreamPlayer" parent="StartButton"]
+stream = ExtResource( 10 )
+volume_db = 10.0
+
 [node name="KeysWSAD" type="ReferenceRect" parent="."]
 margin_left = 522.0
 margin_top = 399.0
@@ -267,5 +273,10 @@ texture = ExtResource( 5 )
 autoplay = "SeedStartScreen"
 anims/RESET = SubResource( 11 )
 anims/SeedStartScreen = SubResource( 12 )
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_StartButton_pressed"]

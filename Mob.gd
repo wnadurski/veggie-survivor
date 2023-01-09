@@ -66,9 +66,11 @@ func damage(weapon_name: String, amount: int):
 		hp = max(0, hp - amount)
 		weapon_last_hit[weapon_name] = now
 		$AnimationPlayer.play("damage")
+		$MobHit.play()
 		if hp == 0:
 			$DeathTimer.connect("timeout", self, "die")
 			$DeathTimer.start()
+			$MobDeath.play()
 
 func die():
 	var seeds_count = seeds[randi() % seeds.size()]

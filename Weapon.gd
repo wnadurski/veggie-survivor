@@ -54,6 +54,7 @@ func _on_HitTimer_timeout():
 	if stopped:
 		return
 	$AnimationPlayer.play("Attack")
+	$ScytheAttack.play()
 	
 func stop_attacking():
 	stopped = false
