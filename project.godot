@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="VeggieSurvivor"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://StartScreen.tscn"
 config/icon="res://icon.png"
 
 [display]
